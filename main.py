@@ -87,7 +87,8 @@ for day in days:
         ).traverse_commits()
 
         for commit in commits:
-            logger.info(commit.committer_date)
+            message = commit.msg.partition("\n")[0]
+            print(f"{message}, https://github.com/{repository}/commit/{commit.hash}")
             data.append(
                 [
                     "",
