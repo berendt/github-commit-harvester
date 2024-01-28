@@ -20,6 +20,7 @@ REPOSITORIES = {
     "osism/ansible-playbooks-manager",
     "osism/cfg-cookiecutter",
     "osism/cfg-generics",
+    "osism/ci-image",
     "osism/cloud-in-a-box",
     "osism/container-image-ceph-ansible",
     "osism/container-image-inventory-reconciler",
@@ -27,26 +28,32 @@ REPOSITORIES = {
     "osism/container-image-osism-ansible",
     "osism/container-images",
     "osism/container-images-kolla",
+    "osism/deb-packaging",
     "osism/defaults",
     "osism/k8s-capi-images",
+    "osism/kolla-operations",
     "osism/node-image",
     "osism/openstack-flavor-manager",
     "osism/openstack-image-manager",
+    "osism/openstack-octavia-amphora-image",
     "osism/openstack-project-manager",
     "osism/openstack-resource-manager",
     "osism/openstack-sandbox-manager",
+    "osism/openstack-simple-stress",
     "osism/openstack-themes",
     "osism/osism.github.io",
     "osism/python-osism",
     "osism/release",
+    "osism/sbom",
     "osism/terraform-base",
     "osism/testbed",
+    "osism/tests",
 }
 
 AUTHORS = ["Christian Berendt"]
 
 YEAR = 2023
-MONTH = 11
+MONTH = 12
 
 level = "INFO"
 log_fmt = (
@@ -62,9 +69,7 @@ days = [datetime.datetime(YEAR, MONTH, day) for day in range(1, num_days + 1)]
 
 for repository in REPOSITORIES:
     try:
-        Repo.clone_from(
-            f"https://github.com/{repository}.git", f"cache/{repository}"
-        )
+        Repo.clone_from(f"https://github.com/{repository}.git", f"cache/{repository}")
         logger.info(f"Cloning {repository}")
     except:
         r = Repo(f"repositories/{repository}")
