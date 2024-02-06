@@ -52,8 +52,8 @@ REPOSITORIES = {
 
 AUTHORS = ["Christian Berendt"]
 
-YEAR = 2023
-MONTH = 12
+YEAR = 2024
+MONTH = 1
 
 level = "INFO"
 log_fmt = (
